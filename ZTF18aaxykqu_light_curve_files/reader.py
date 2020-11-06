@@ -1,3 +1,5 @@
+import ascii 
+
 r = ascii.read('./lightcurves/ztf/lc_’+cfilename+'_r.tbl', format='ipac', delimiter='|')
 
 columns,rows = len(r[0]),len(r)
