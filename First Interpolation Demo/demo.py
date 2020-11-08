@@ -24,6 +24,7 @@ red_mags = list(np.array(r['mag']))
 
 #order them by date...because I was having issues with polynomial fits
 #when some of the data points were out of order so I ordered them here 
+#note that this exercise doesn't involve polynomial fits though. 
 sgm = []
 sgd = list(np.sort(np.array(green_dates)))
 
