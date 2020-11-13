@@ -21,7 +21,8 @@ def calculate_peaks(data_array,widthval):
 ##sorted mags, assign the variable to the 1st index of the function, e.g. sorted_mags = sort_data(...)[1]
 ##This function exists because a lot of functions aren't working on the data arrays when they aren't sorted 
 ##(e.g. searching for local extrema in the data) 
-def sort_data(unsorteddates,unsortedmags,sorteddates,sortedmags):
+##example: srd = sort_data(unsorteddates=red_dates,unsortedmags=red_mags)[0]
+def sort_data(unsorteddates,unsortedmags):
     #Import
     import numpy as np
     #Action
@@ -29,6 +30,7 @@ def sort_data(unsorteddates,unsortedmags,sorteddates,sortedmags):
     unsortedmags=list(unsortedmags)
     
     sorteddates=list(np.sort(unsorteddates))
+    sortedmags = []
     for elem in sorteddates:
         newIndex = sorteddates.index(elem)
         oldIndex = unsorteddates.index(elem)
