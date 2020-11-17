@@ -25,7 +25,7 @@ def sort_data(unsorteddates,unsortedmags):
     
     return sorteddates, sortedmags
 
-#Get data
+#Get data .... change the two paths below on your own work 
 green_path = '/home/thaddaeus/FMU/HRL/LAH/secondExercise/ZTF18aaxykqu_light_curve_files/lc_203230.44+435741.9_g.tbl'
 red_path = '/home/thaddaeus/FMU/HRL/LAH/secondExercise/ZTF18aaxykqu_light_curve_files/lc_203230.44+435741.9_r.tbl'
 g = ascii.read(green_path,format='ipac',delimiter='|')
