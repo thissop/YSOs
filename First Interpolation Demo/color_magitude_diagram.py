@@ -5,7 +5,8 @@ import numpy as np
 import seaborn as sns
 from scipy import interpolate
 
-#Useful functions
+#Useful functions ... speaking of which, I reccomend yg to add a file / module to that folder where all python modules are kept on your computer
+#so you can just import the sort_data() function :)
 def sort_data(unsorteddates,unsortedmags):
     #Import
     import numpy as np
