@@ -2,6 +2,7 @@ import ascii
 
 r = ascii.read('./lightcurves/ztf/lc_’+cfilename+'_r.tbl', format='ipac', delimiter='|')
 
+##\/ \/ isn't important once you have a feel for it
 columns,rows = len(r[0]),len(r)
 print 'number of columns =',columns
 print 'number of rows =',rows
