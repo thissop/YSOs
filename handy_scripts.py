@@ -40,3 +40,19 @@ def sort_data(unsorteddates,unsortedmags):
     sortedmags = np.array(sortedmags)
     
     return sorteddates, sortedmags
+
+
+##This function returns an array of differences between values in another array. Example: green_differences = find_differences(x=sgd)
+def find_differences(x):
+    #Imports
+    import numpy as np
+    #Action
+    inputlist = list(x)
+    outlist = []
+    for elem in inputlist:
+        followindex = inputlist.index(elem)+1
+        if followindex+1 <= len(inputlist):
+            difference = inputlist[followindex]-elem
+            outlist.append(difference)
+    outarray = np.array(outlist)
+    return(outarray)
