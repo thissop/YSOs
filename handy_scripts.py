@@ -56,3 +56,34 @@ def find_differences(x):
             outlist.append(difference)
     outarray = np.array(outlist)
     return(outarray)
+
+#This is a script to quickly investigate ASAS-SN data with the astropy implementation of the lomb-scargle periodogram.  
+#asassn_data_file should be the string path to the .csv data file in question, and the starname should be the string name of the star, 
+#e.g. 'AA NOR'
+def analyze_variations(asassn_data_file,starname): 
+    import astropy.units as u
+    from astropy.timeseries import LombScargle
+    import matplotlib.pyplot as plt
+    from astropy.io import ascii
+    import numpy as np 
+
+    #read data
+    data = ascii.read(asassn_data_file) #read the csv file into an astropy table
+    dates = data['hjd']
+    mags = data['mag']
+
+    #use astropy.units to alert the lomb-scargle of the units you're in 
+    t_days = dates*u.day 
+    y_mags = mags*u.mag
+
+    #Calculate periodogram
+    frequency, power = LombScargle(t_days,y_mags).autopower(method='fastchi2')
+
+    #Plot
+    plt.plot(frequency,power)
+    plt.xscale('log')
+    plt.xlabel('Frequency (1/d)')
+    plt.ylabel('Power')
+    plt.title(starname+' Periodogram')
+
+    plt.show()
