@@ -3,7 +3,7 @@ This is the documentation for all the files and functions in our YSOs pipeline /
 
 ## plot_data.py
 - **Overview:** this file provides a standardized general plotting routine. 
-- **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:* opening hundreds of plots would probably ddos your computer just as easily xD).  
+- **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:* opening hundreds of plots would probably dos your computer just as easily xD).  
 - **Argument definitions:** 
   - x: 
   - colors: 
