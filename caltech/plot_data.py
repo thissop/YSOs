@@ -33,7 +33,7 @@ def Plot_data(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_ty
     plt.legend()
     plt.ylim(global_max,global_min)
 
-    if out_type == 'plot':
+    if out_type == 'save':
         plt.show()
     else: 
         plt.savefig(out_type)
