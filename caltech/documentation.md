@@ -22,6 +22,6 @@ This is the documentation for all the files and functions in our YSOs pipeline /
 from caltech.plot_data import Plot_data
 Plot_data(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',line_labels=['Green Band','Red Band'],plot_type='show')
 ```
-Note that in this example, sgm and srm are arrays of magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates). 
+Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates). 
 
 ![Example Plot](-url-path-to-image)
