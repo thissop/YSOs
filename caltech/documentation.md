@@ -10,6 +10,7 @@ This is the documentation for all the files and functions in our YSOs pipeline /
   - colors: a list of colors for each of the lines you want to plot, e.g. colors=['green','red'] will set the first line green and the second red. 
   - x_label: the string label for the x-axis. 
   - y_label: the string label for the y-axis. 
+  - plot_title: the string label for the plot title.
   - line_labels: this should be a list of string labels for each of the lines being plotted. They should be in the same list order as the items in x in y. 
   - plot_type: there are four plot_type options:
     1. 'scatter': simple scatter plot
@@ -17,11 +18,11 @@ This is the documentation for all the files and functions in our YSOs pipeline /
     3. 'scatter_error': scatter plot with error bars 
     4. 'plot_error': line plot with error bars
   - out_type: should either be 'show', which results in plt.show(), or a string filepath (which will save the plot as the given path).
+  - error_arrays: the names of the arrays of error values. Set it to 'N/A' when plot_type is not set to either 'scatter_error' or 'plot_error'
 ### Example
 ```
 from caltech.plot_data import Plot_data
-Plot_data(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',line_labels=['Green Band','Red Band'],plot_type='show')
-```
+Plot_data(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',plot_title='Example Plot',line_labels=['Green Band','Red Band'],plot_type='scatter',out_type='show',error_arrays='N/A')```
 Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates). 
 
-![Example Plot](-url-path-to-image)
+![Example Plot](caltech/images/example_plot_data.png)
