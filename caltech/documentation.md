@@ -26,3 +26,5 @@ Plot_data(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='
 ```
 ![Example Plot](https://github.com/thissop/YSOs/blob/main/caltech/images/example_plot_data.png)
 Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates). 
+
+<img src="https://github.com/thissop/YSOs/blob/main/caltech/images/example_plot_data.png" width="500" height="600">
