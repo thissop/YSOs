@@ -1,6 +1,17 @@
 # caltech 
 This is the documentation for all the files and functions in our YSOs pipeline / package. 
 
+### Guidelines
+#### Naming Conventions
+- As in the <a href="https://astroquery.readthedocs.io/en/latest/">astroquery</a> module, all function names should start with a capital letter and be lower case otherwise. 
+- Filenames should be in lowercase. 
+- Aim to name functions and files with the same name (they'll be differentiated by the capitalization of the first letter). 
+- Example: 
+```
+from caltech.plot_data import Plot_data()
+```
+- This imports the function *Plot_data()* from its file <a href='https://github.com/thissop/YSOs/blob/main/caltech/plot_data.py'>plot_data.py</a> (when the entire module is in your */site-packages* directory, of course).
+
 ## plot_data.py
 - **Overview:** this file provides a standardized general plotting routine. 
 - **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:* opening hundreds of plots would probably dos your computer just as easily xD).  
