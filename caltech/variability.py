@@ -2,7 +2,7 @@ def sergisonDistribution(x,percentiles):
     #Import(s)
     import numpy as np
     
-    #Actions
+    #Action
     mag_list = list(x)
     mean_mag = np.mean(np.array(mag_list))
     lower_percentile,upper_percentile = np.percentile(np.array(mag_list),[percentiles[0], percentiles[1]])
