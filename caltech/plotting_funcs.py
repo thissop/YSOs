@@ -1,4 +1,4 @@
-def plotLightcurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_type,error_arrays):
+def plotLightCurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_type,error_arrays):
     #Import(s)
     import matplotlib.pyplot as plt 
     import numpy as np
