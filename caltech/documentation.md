@@ -1,19 +1,17 @@
-# caltech 
+# ysopy 
 This is the documentation for all the files and functions in our YSOs pipeline / package. 
 
-### Guidelines
-#### Naming Conventions
-- As in the <a href="https://astroquery.readthedocs.io/en/latest/">astroquery</a> module, all function names should start with a capital letter and be lower case otherwise. 
-- Filenames should be in lowercase. 
-- Aim to name functions and files with the same name (they'll be differentiated by the capitalization of the first letter). 
+## Guidelines
+#### Naming and Style Conventions 
+- Module (file) names should be in snake_case, and functions in camelCase (apologies for violating PEP-8 there). 
 - Example: 
 ```
-from caltech.plot_data import Plot_data()
+from ysopy.plotting_funcs import plotLightCurve
 ```
-- This imports the function *Plot_data()* from its file <a href='https://github.com/thissop/YSOs/blob/main/caltech/plot_data.py'>plot_data.py</a> (when the entire module is in your */site-packages* directory, of course).
 
-## plot_data.py
+## plotting_funcs.py
 - **Overview:** this file provides a standardized general plotting routine. 
+### plotLightCurve()
 - **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:* opening hundreds of plots would probably dos your computer just as easily xD).  
 - **Parameters:** 
   - x: should be a list of all the names of the date arrays you want to plot. 
@@ -30,12 +28,12 @@ from caltech.plot_data import Plot_data()
     4. 'plot_error': line plot with error bars
   - out_type: should either be 'show', which results in plt.show(), or a string filepath (which will save the plot as the given path).
   - error_arrays: the names of the arrays of error values. Set it to 'N/A' when plot_type is not set to either 'scatter_error' or 'plot_error'
-### Example
+#### Example
 ```
-from caltech.plot_data import Plot_data
-Plot_data(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',plot_title='Example Plot',line_labels=['Green Band','Red Band'],plot_type='scatter',out_type='show',error_arrays='N/A')
+from ysopy.plotting_funcs import plotLightCurve
+plotLightCurve(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',plot_title='Example Plot',line_labels=['Green Band','Red Band'],plot_type='scatter',out_type='show',error_arrays='N/A')
 ```
-<img src="https://github.com/thissop/YSOs/blob/main/caltech/images/example_plot_data.png" width="350" height="230">
+<img src="https://github.com/thissop/YSOs/blob/main/ysopy/images/example_plotLightCurve.png" width="350" height="230">
 
 *Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates)* 
 
