@@ -27,7 +27,7 @@ def plotLightCurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,o
     plt.gca().invert_yaxis()
     plt.legend()
     
-    if out_type == 'save':
+    if out_type == 'show':
         plt.show()
     else: 
         plt.savefig(out_type)
