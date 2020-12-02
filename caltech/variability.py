@@ -5,8 +5,8 @@ def sergisonDistribution(x,percentiles):
     #Actions
     mag_list = list(x)
     mean_mag = np.mean(np.array(mag_list))
-    sixteenth,eigty_fourth = np.percentile(np.array(mag_list),[percentiles[0], percentiles[1]])
-    amp_metric = sixteenth-eigty_fourth
+    lower_percentile,upper_percentile = np.percentile(np.array(mag_list),[percentiles[0], percentiles[1]])
+    amp_metric = lower_percentile-upper_percentile
     
 
     normalized_mags = []
