@@ -1,4 +1,4 @@
-# ysopy 
+# ysospy 
 This is the documentation for all the files and functions in our YSOs pipeline / package. 
 
 ## Guidelines
@@ -6,13 +6,12 @@ This is the documentation for all the files and functions in our YSOs pipeline /
 - Module (file) names should be in snake_case, and functions in camelCase (apologies for violating PEP-8 there). 
 - Example: 
 ```
-from ysopy.plotting_funcs import plotLightCurve
+from ysospy.plotting_funcs import plotLightCurve
 ```
-
 ## plotting_funcs.py
-- **Overview:** this file provides a standardized general plotting routine. 
+- **Overview:** this file contains general plotting routines. 
 ### plotLightCurve()
-- **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:* opening hundreds of plots would probably dos your computer just as easily xD).  
+- **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:*, opening hundreds of plots would probably dos your computer just as easily xD).  
 - **Parameters:** 
   - x: should be a list of all the names of the date arrays you want to plot. 
   - y: should be a list of all the names of the magnitude arrays you want to plot, with each array in the same indice position as its corresponding date array in x. 
@@ -30,10 +29,29 @@ from ysopy.plotting_funcs import plotLightCurve
   - error_arrays: the names of the arrays of error values. Set it to 'N/A' when plot_type is not set to either 'scatter_error' or 'plot_error'
 #### Example
 ```
-from ysopy.plotting_funcs import plotLightCurve
+from ysospy.plotting_funcs import plotLightCurve
 plotLightCurve(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',plot_title='Example Plot',line_labels=['Green Band','Red Band'],plot_type='scatter',out_type='show',error_arrays='N/A')
 ```
-<img src="https://github.com/thissop/YSOs/blob/main/ysopy/images/example_plotLightCurve.png" width="350" height="230">
+<img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/example_plotLightCurve.png" width="350" height="230">
 
 *Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates)* 
+## variability.py
+- **Overview:** this file contains variability characterization routines. 
+### sergisonDistribution()
+- **Summary:** this is an function for normalizing magnitudes as in Sergison et al. 2019 §4. It returns two outputs, which can be returned individually by calling either the first or second index of the function, which returns either the AH68 metric or an array of the normalized magnitudes, respectively. 
+- **Parameters:**
+  - x: an array or list of magnitudes that you wish to normalize and or find the AH68 metric for. 
+  - percentiles: the AH68 metric is calculated with the 16th and 84th percentiles (as in the paper), but in case you want to calculate a similiar measure of variability amplitude, you can enter the percentiles as integer items in a list and set that list equal to the percentiles argument, e.g. percentiles=[5,95]. 
+#### Example: 
+```
+from ysospy.plottingfuncs import sergisonDistribution()
+import seaborn as sns
+import matplotlib.pyplot as plt
+norm_mags = sergisonDistribution(x=srm,percentiles=[16,84])[1] #percentiles for AH68 metric
+sns.histplot(norm_mags)
+plt.xlabel('Normalized Magnitudes')
+plt.ylabel('Counts')
+plt.show()
+```
+<img src=https://github.com/thissop/YSOs/blob/main/caltech/images/sergisonDist.png"" width="350" height="230">
 
