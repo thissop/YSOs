@@ -48,10 +48,10 @@ from ysospy.plottingfuncs import sergisonDistribution()
 import seaborn as sns
 import matplotlib.pyplot as plt
 norm_mags = sergisonDistribution(x=srm,percentiles=[16,84])[1] #percentiles for AH68 metric
-sns.histplot(norm_mags)
+sns.histplot(norm_mags,kde=True)
 plt.xlabel('Normalized Magnitudes')
 plt.ylabel('Counts')
 plt.show()
 ```
-<img src=https://github.com/thissop/YSOs/blob/main/caltech/images/sergisonDist.png"" width="350" height="230">
+<img src="https://github.com/thissop/YSOs/blob/main/caltech/images/sergisonDist.png" width="350" height="230">
 
