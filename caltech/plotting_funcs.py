@@ -1,12 +1,16 @@
-def Plot_data(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_type,error_arrays):
-    #Imports
+def plotLightcurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_type,error_arrays):
+    #Import(s)
     import matplotlib.pyplot as plt 
     import numpy as np
+    import seaborn as sns
     
     #Action
+    sns.set_style('darkgrid')
+    plt.rcParams['font.family'] = 'Times New Roman'
     plt.title(plot_title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    
 
     item_index = 0
     for item in x:
@@ -19,20 +23,10 @@ def Plot_data(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,out_ty
         elif plot_type == 'plot_error':
             plt.error(item,y[item_index],yerr=error_arrays[item_index],marker='o',color=colors[item_index],ms=2,linewidth=0,label=line_labels[item_index])
         item_index = item_index+1
-    #Calculate maximum and minimum magnitudes for ylim
     
-    conglomerate_list = []
-    for item in y:
-        for elem in item:
-            conglomerate_list.append(elem)
-    
-    global_max = np.max(conglomerate_list)+0.2
-    global_min = np.min(conglomerate_list)-0.2
-
-
+    plt.gca().invert_yaxis()
     plt.legend()
-    plt.ylim(global_max,global_min)
-
+    
     if out_type == 'save':
         plt.show()
     else: 
