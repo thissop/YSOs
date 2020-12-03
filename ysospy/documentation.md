@@ -8,6 +8,8 @@ This is the documentation for all the files and functions in our YSOs pipeline /
 ```
 from ysospy.plotting_funcs import plotLightCurve
 ```
+## handy_scripts.py
+- **Overview:** this file contains miscellaneous helpful routines. 
 ## plotting_funcs.py
 - **Overview:** this file contains general plotting routines. 
 ### plotLightCurve()
