@@ -46,7 +46,7 @@ plotLightCurve(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_la
   - percentiles: the AH68 metric is calculated with the 16th and 84th percentiles (as in the paper), but in case you want to calculate a similiar measure of the amplitude of variability in the array, you can enter the percentiles as integer items in a list and set that list equal to the percentiles argument, e.g. percentiles=[5,95] (the range that confines 90% of the data). 
 #### Example: 
 ```
-from ysospy.plottingfuncs import sergisonDistribution()
+from ysospy.plotting_funcs import sergisonDistribution()
 import seaborn as sns
 import matplotlib.pyplot as plt
 norm_mags = sergisonDistribution(x=srm,percentiles=[16,84])[1] #percentiles for AH68 metric
