@@ -27,8 +27,8 @@ def removeIntervals(x,y,intervals):
     y = list(y)
     
     for item in intervals:
-        lower_bound = item.split(':')[0]
-        upper_bound = item.split(':')[1]
+        lower_bound = float(item.split(':')[0])
+        upper_bound = float(item.split(':')[1])
         for elem in x:
             if elem < upper_bound:
                 if elem > lower_bound:
