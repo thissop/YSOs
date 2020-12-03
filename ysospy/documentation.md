@@ -10,10 +10,42 @@ from ysospy.plotting_funcs import plotLightCurve
 ```
 ## handy_scripts.py
 - **Overview:** this file contains miscellaneous helpful routines. 
+## interpolation.py
+- **Overview:** this file contains routines that may be a great help when interpolating data.
+### returnGoodIntervals()
+- **Summary:** this function returns sub-interval arrays that meet certain criteria (maximum distance between elemental points, minimum cardinality of sub-interval) from an input array of dates. This function was originally written to improve interpolation quality by getting rid of regions where the data are sparsely sampled. There are three outputs of the function, which can be called by index. The first is the number of good sub-intervals returned, the second is a list of the good sub-interval arrays of dates, and the third is a list of the good sub-interval mags. 
+- **Parameters:**
+  - x: the sorted array of dates that you wish to split into good sub-intervals. 
+  - y: the sorted array of magnitudes that correspond to the dates in x (as this function goes ahead and modifies the mag array while it's modifying the date array).
+  - max_sep: the maximum separation in days allowed between elements in a good sub-interval.  
+  - min_card: the minimum cardinality for good intervals. Intervals of data with lesser cardinality will be removed. 
+#### Example: 
+```
+#Import(s)
+import matplotlib.pyplot as plt
+from ysospy.interpolation import returnGoodIntervals
+
+#Action
+num_arrays = returnGoodRegions(x=sgd,y=sgm,max_sep=20,min_card=3)[0] 
+x_arrays = returnGoodRegions(x=sgd,y=sgm,max_sep=20,min_card=3)[1]
+y_arrays = returnGoodRegions(x=sgd,y=sgm,max_sep=20,min_card=3)[2]
+i = 0
+colors = ['red','blue','green','yellow','purple','black','brown','pink','orange']
+for elem in x_arrays:
+    plt.scatter(elem,y_arrays[i],s=4,c=colors[i])
+    i += 1
+plt.gca().invert_yaxis()
+plt.xlabel('HJD')
+plt.ylabel('Mag')
+plt.show()
+```
+<img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/mincardinaction.png" width="350" height="230">
+*Note that in this example, sgd was a predefined array of dates, and that sgm was a predefined array of mags. Also note that isolated data present in the graph below have been removed in the plot of the returnGoodIntervals output.*
+<img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/betterplotofprev.png" width="350" height="230">
 ## plotting_funcs.py
 - **Overview:** this file contains general plotting routines. 
 ### plotLightCurve()
-- **Interesting features:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:*, opening hundreds of plots would probably dos your computer just as easily xD).  
+- **Summary:** you can pass multiple date and mag arrays for plotting. You can also set whether the output is a plot opened in a new window or a saved file (because if we set it to open new plots for hundreds of files...forget *:(){ :|:& };:*, opening hundreds of plots would probably dos your computer just as easily xD).  
 - **Parameters:** 
   - x: should be a list of all the names of the date arrays you want to plot. 
   - y: should be a list of all the names of the magnitude arrays you want to plot, with each array in the same indice position as its corresponding date array in x. 
