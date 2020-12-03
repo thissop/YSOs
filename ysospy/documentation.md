@@ -32,7 +32,7 @@ from ysospy.plotting_funcs import plotLightCurve
 from ysospy.plotting_funcs import plotLightCurve
 plotLightCurve(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_label='Mag',plot_title='Example Plot',line_labels=['Green Band','Red Band'],plot_type='scatter',out_type='show',error_arrays='N/A')
 ```
-<img src="https://github.com/thissop/YSOs/blob/main/caltech/images/example_plotLightCurve.png" width="350" height="230">
+<img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/example_plotLightCurve.png" width="350" height="230">
 
 *Note that in this example, sgm and srm represent previously defined arrays of stellar magnitudes sorted by their corresponding date arrays, sgd (sorted green dates) and srd (sorted red dates)* 
 ## variability.py
@@ -53,6 +53,6 @@ plt.xlabel('Normalized Magnitudes')
 plt.ylabel('Counts')
 plt.show()
 ```
-<img src="https://github.com/thissop/YSOs/blob/main/caltech/images/sergisonDist.png" width="350" height="230">
+<img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/sergisonDist.png" width="350" height="230">
 *Note that in this example, srm is a predefined magnitudes array.* 
 
