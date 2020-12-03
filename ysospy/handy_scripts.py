@@ -14,15 +14,10 @@ def returnDistances(x):
     import numpy as np
     
     #Action
-    input_list = list(x)
-    out_list = []
-    for elem in input_list:
-        follow_index = input_list.index(elem)+1
-        if follow_index+1 <= len(input_list):
-            difference = input_list[follow_index]-elem
-            out_list.append(difference)
-    out_array = np.array(out_list)
-    return(out_array)
+    input_array = np.array(x)
+    out_array = np.diff(input_array)
+    return out_array
+    
 
 def sortData(x,y):
     #Import(s)
