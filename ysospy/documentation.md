@@ -40,7 +40,7 @@ plt.ylabel('Mag')
 plt.show()
 ```
 <img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/mincardinaction.png" width="350" height="230">
-*Note that in this example, sgd was a predefined array of dates, and that sgm was a predefined array of mags. Also note that isolated data present in the graph below have been removed in the plot of the returnGoodIntervals output.
+*Note that in this example, sgd was a predefined array of dates, and that sgm was a predefined array of mags. Also note that isolated data present in the graph below have been removed in the plot of the returnGoodIntervals output above.
 <img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/betterplotofprev.png" width="350" height="230">
 
 ## plotting_funcs.py
