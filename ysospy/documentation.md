@@ -56,5 +56,5 @@ plt.ylabel('Counts')
 plt.show()
 ```
 <img src="https://github.com/thissop/YSOs/blob/main/ysospy/images/sergisonDist.png" width="350" height="230">
-*Note that in this example, srm is a predefined magnitudes array.* 
+*Note that in this example, srm is a predefined magnitudes array. * 
 
