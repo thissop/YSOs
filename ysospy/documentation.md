@@ -10,6 +10,15 @@ from ysospy.plotting_funcs import plotLightCurve
 ```
 ## handy_scripts.py
 - **Overview:** this file contains miscellaneous helpful routines. 
+### calculatePeakLocs()
+### removeIntervals()
+- **Summary:** this function removes parameter defined intervals of data from a sorted array of dates and its corresponding array of mags. 
+- **Parameters:**
+  - x: the sorted date array. 
+  - y: the array of mags, sorted to the date array. 
+  - intervals: this should be a list in which the elements are formatted like this: ```'lower_date_bound:upper_date_bound'```. All data in the provided open intervals (lower_date_bound,upper_date_bound) will be removed. So if one wanted to remove all observations between HJD 2456202 and HJD 2456205 in a data set, you should set intervals to ```['2456202:2456205']```.
+### returnDistances()
+### sortData()
 ## interpolation.py
 - **Overview:** this file contains routines that may be a great help when interpolating data.
 ### returnGoodIntervals()
