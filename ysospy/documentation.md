@@ -40,7 +40,7 @@ plotLightCurve(x=[sgd,srd],y=[sgm,srm],colors=['green','red'],x_label='HJD',y_la
 ## variability.py
 - **Overview:** this file contains variability characterization routines. 
 ### sergisonDistribution()
-- **Summary:** this is a function for normalizing magnitudes as in Sergison et al. 2019 §4. It returns two outputs, which can be returned individually by calling either the first or second index of the function, which returns either the AH68 metric or an array of the normalized magnitudes, respectively. 
+- **Summary:** this is a function for normalizing magnitudes as in Sergison et al. 2019 §4. It returns two outputs, which can be returned individually by calling  the first or second index of the function, which returns either the AH68 metric or an array of the normalized magnitudes, respectively. 
 - **Parameters:**
   - x: an array or list of magnitudes that you wish to normalize and or find the AH68 metric for. 
   - percentiles: the AH68 metric is calculated with the 16th and 84th percentiles (as in the paper), but in case you want to calculate a similiar measure of the amplitude of variability in the array, you can enter the percentiles as integer items in a list and set that list equal to the percentiles argument, e.g. percentiles=[5,95] (the range that confines 90% of the data). 
