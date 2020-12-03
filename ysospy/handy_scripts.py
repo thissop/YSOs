@@ -18,6 +18,25 @@ def returnDistances(x):
     out_array = np.diff(input_array)
     return out_array
     
+def removeIntervals(x,y,intervals):
+    #Import(s)
+    import numpy as np 
+
+    #Action
+    x = list(x)
+    y = list(y)
+    
+    for item in intervals:
+        lower_bound = item.split(':')[0]
+        upper_bound = item.split(':')[1]
+        for elem in x:
+            if elem < upper_bound:
+                if elem > lower_bound:
+                    elem_index = x.index(elem)
+                    x.remove(elem)
+                    y.remove(y[elem_index])
+    
+    return np.array(x),np.array(y)
 
 def sortData(x,y):
     #Import(s)
