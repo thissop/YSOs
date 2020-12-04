@@ -47,7 +47,7 @@ def sortData(x,y):
     unsorted_dates = list(x)
     unsorted_mags = list(y)
     
-    sorted_dates = list(np.sort(unsorteddates))
+    sorted_dates = list(np.sort(unsorted_dates))
     sorted_mags = []
     for elem in sorted_dates:
         newIndex = sorted_dates.index(elem)
