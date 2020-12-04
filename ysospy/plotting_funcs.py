@@ -29,5 +29,7 @@ def plotLightCurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,o
     
     if out_type == 'show':
         plt.show()
+        plt.clf()
     else: 
         plt.savefig(out_type)
+        plt.clf()
