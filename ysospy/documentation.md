@@ -22,6 +22,16 @@ from ysospy.plotting_funcs import plotLightCurve
 from ysospy.handy_scipts import calculatePeakLocs
 peak_indices = calculatePeakLocks(x=example_array_of_mags,w_val=3)
 ```
+### queryCoordSimbad()
+- **Summary:** this function returns the string identifier from Simbad for a given input coordinate (it takes the closest result from the Simbad result table).
+- **Parameters:**
+  - raw_coord: the coordinate for the object in question should be in this form: ```raw_coord='20:50:32.32+44:26:17.4'```.
+  - search_radius: the search radius (in seconds), should be an integer value. ```search_radius=5``` is the recommended default.
+##### Example: 
+```
+from ysospy.handy_scipts import queryCoordSimbad
+obsid = queryCoordSimbad(raw_coord='20:54:24.41+44:48:17.3',search_radius=5)
+```
 ### removeIntervals()
 - **Summary:** this function removes parameter defined intervals of data from a sorted array of dates and its corresponding array of mags. 
 - **Parameters:**
