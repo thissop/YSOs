@@ -97,7 +97,7 @@ plt.show()
   - plot_type: there are four plot_type options:
     1. 'scatter': simple scatter plot
     2. 'plot': simple line plot
-    3. 'scatter_error': scatter plot with error bars 
+    3. 'Scatter_error': scatter plot with error bars 
     4. 'plot_error': line plot with error bars
   - out_type: should either be 'show', which results in plt.show(), or a string filepath (which will save the plot as the given path).
   - error_arrays: the names of the arrays of error values. Set it to 'N/A' when plot_type is not set to either 'scatter_error' or 'plot_error'
