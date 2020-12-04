@@ -1,9 +1,9 @@
 # ysospy 
-This is the documentation for all the files and functions in our YSOs pipeline / package. 
+This is the documentation for all the files and functions in our ysospy package. 
 
 ## Guidelines
 #### Naming and Style Conventions 
-- Module (file) names should be in snake_case, and functions in camelCase (apologies for violating PEP-8 there). 
+- Module (file) names should be in snake_case, and functions in camelCase. 
 - Example: 
 ```
 from ysospy.plotting_funcs import plotLightCurve
