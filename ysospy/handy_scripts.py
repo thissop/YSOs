@@ -4,6 +4,7 @@ def calculatePeakLocs(x,w_val):
     import numpy as np
     
     #Action
+    x = np.array(x)
     fakepeaks, _ = find_peaks(x,width=w_val)
     realpeaks, _ = find_peaks((x*-1),width=w_val)
     outarray = np.concatenate((fakepeaks,realpeaks))
