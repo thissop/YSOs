@@ -8,9 +8,20 @@ This is the documentation for all the files and functions in our YSOs pipeline /
 ```
 from ysospy.plotting_funcs import plotLightCurve
 ```
+#### General notes
+- All functions automatically import the modules they require.  
 ## handy_scripts.py
 - **Overview:** this file contains miscellaneous helpful routines. 
 ### calculatePeakLocs()
+- **Summary:** this function uses the ```scipy.find_peaks``` function to return the indices of all relative extrema in an array of magnitudes. 
+- **Parameters:**
+  - x: the array of magnitudes (which has been sorted to a corresponding array of dates)
+  - w_val: the required minimal horizontal distance between neighbouring peaks (scipy). This function is different than the ```scipy.find_peaks()``` it's based on because it finds relative minimums as well as relative maximums (it does this by find peaks in the array multiplied by negative one). 
+#### Example: 
+```
+from ysospy.handy_scipts import calculatePeakLocs
+peak_indices = calculatePeakLocks(x=example_array_of_mags,w_val=3)
+```
 ### removeIntervals()
 - **Summary:** this function removes parameter defined intervals of data from a sorted array of dates and its corresponding array of mags. 
 - **Parameters:**
@@ -18,7 +29,25 @@ from ysospy.plotting_funcs import plotLightCurve
   - y: the array of mags, sorted to the date array. 
   - intervals: this should be a list in which the elements are formatted like this: ```'lower_date_bound:upper_date_bound'```. All data in the provided open intervals (lower_date_bound,upper_date_bound) will be removed. So if one wanted to remove all observations between HJD 2456202 and HJD 2456205 in a data set, you should set intervals to ```['2456202:2456205']```.
 ### returnDistances()
+- **Summary:** this function returns an array of all the distances between date values in an array. It can really be replaced by the one line np.diff(a) function that it's based off (it used to be a more extensive function, but then we realized we can just simplify it to np.diff). 
+- **Parameters:** 
+  - x: the array of dates in which you wish to find the differences between consecutive elements. 
+#### Example:
+```
+from ysospy.handy_scripts import returnDistances
+differences=returnDistances(example_date_array)
+```
 ### sortData()
+- **Summary:** this function sorts an array of dates and then sorts its corresponding, provided array of mags to the same order (so corresponding dates and mags are matched). The function returns the sorted dates array first and then returns the sorted mags array (as usual call these individually by indexing the function's output). 
+- **Parameters:**
+  - x: the date array. 
+  - y: the corresponding array of magnitudes. 
+#### Example: 
+```
+from ysospy.handy_scripts import sortData
+sorted_dates=sortData(example_dates_array,example_mags_array)[0]
+sorted_mags=sortDate(example_dates_array,example_mags_array)[1]
+```
 ## interpolation.py
 - **Overview:** this file contains routines that may be a great help when interpolating data.
 ### returnGoodIntervals()
