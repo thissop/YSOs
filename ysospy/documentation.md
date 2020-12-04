@@ -15,7 +15,7 @@ from ysospy.plotting_funcs import plotLightCurve
 ### calculatePeakLocs()
 - **Summary:** this function uses the ```scipy.find_peaks``` function to return the indices of all relative extrema in an array of magnitudes. 
 - **Parameters:**
-  - x: the array of magnitudes (which has been sorted to a corresponding array of dates)
+  - x: the array of magnitudes (which has been previously sorted to a corresponding array of dates)
   - w_val: the required minimal horizontal distance between neighbouring peaks (scipy). This function is different than the ```scipy.find_peaks()``` it's based on because it finds relative minimums as well as relative maximums (it does this by find peaks in the array multiplied by negative one). 
 #### Example: 
 ```
