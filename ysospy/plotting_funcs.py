@@ -6,7 +6,7 @@ def plotLightCurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,o
     
     #Action
     sns.set_style('darkgrid')
-    plt.rcParams['font.family'] = 'Times New Roman'
+    plt.rcParams['font.family'] = 'Nimbus Roman'
     plt.title(plot_title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
@@ -18,7 +18,7 @@ def plotLightCurve(x,y,colors,x_label,y_label,plot_title,line_labels,plot_type,o
             plt.scatter(item,y[item_index],s=2,c=(colors[item_index]),label=line_labels[item_index])
         elif plot_type == 'plot':
             plt.plot(item,y[item_index],markersize=2,linewidth=1,color=colors[item_index],label=line_labels[item_index])
-        elif plot_type == 'scatter_error':
+        elif plot_type == 'Scatter_error':
             plt.error(item,y[item_index],yerr=error_arrays[item_index],marker='o',color=colors[item_index],ms=2,linewidth=0,label=line_labels[item_index])
         elif plot_type == 'plot_error':
             plt.error(item,y[item_index],yerr=error_arrays[item_index],marker='o',color=colors[item_index],ms=2,linewidth=0,label=line_labels[item_index])
