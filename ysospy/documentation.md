@@ -28,6 +28,7 @@ peak_indices = calculatePeakLocks(x=example_array_of_mags,w_val=3)
   - x: the sorted date array. 
   - y: the array of mags, sorted to the date array. 
   - intervals: this should be a list in which the elements are formatted like this: ```'lower_date_bound:upper_date_bound'```. All data in the provided open intervals (lower_date_bound,upper_date_bound) will be removed. So if one wanted to remove all observations between HJD 2456202 and HJD 2456205 in a data set, you should set intervals to ```['2456202:2456205']```.
+#### NOTE: This function is a work in progress and is not in handy_scripts.py yet!
 ### returnDistances()
 - **Summary:** this function returns an array of all the distances between date values in an array. It can really be replaced by the one line np.diff(a) function that it's based off (it used to be a more extensive function, but then we realized we can just simplify it to np.diff). 
 - **Parameters:** 
