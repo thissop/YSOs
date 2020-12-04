@@ -10,6 +10,22 @@ def calculatePeakLocs(x,w_val):
     outarray = np.concatenate((fakepeaks,realpeaks))
     return(outarray)
 
+def queryCoordinateSimbad(raw_coord,search_radius):
+    #Import(s)
+    import numpy as np
+    from astropy import coordinates as coord
+    from astropy import units as u
+    from astroquery.simbad import Simbad
+    from astropy.coordinates.sky_coordinate import SkyCoord
+
+    #Action
+    c = SkyCoord(raw_coord,unit=(u.hourangle,u.deg))
+    c = c.to_string('hmsdms')
+    result_table = Simbad.query_region(coord.SkyCoord(c, frame='icrs'),radius=('0d0m'+str(search_radius)+'s'))
+    names_col = result_table['MAIN_ID']
+    id = str(names_col[0])[1:]
+    return id
+
 def returnDistances(x):
     #Import(s)
     import numpy as np
