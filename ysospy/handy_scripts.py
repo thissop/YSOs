@@ -10,7 +10,7 @@ def calculatePeakLocs(x,w_val):
     outarray = np.concatenate((fakepeaks,realpeaks))
     return(outarray)
 
-def queryCoordinateSimbad(raw_coord,search_radius):
+def queryCoordSimbad(raw_coord,search_radius):
     #Import(s)
     import numpy as np
     from astropy import coordinates as coord
