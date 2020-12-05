@@ -26,7 +26,7 @@ peak_indices = calculatePeakLocks(x=example_array_of_mags,w_val=3)
 - **Summary:** this function returns the string identifier from Simbad for a given input coordinate (it takes the closest result from the Simbad result table).
 - **Parameters:**
   - raw_coord: the coordinate for the object in question should be in this form: ```raw_coord='20:50:32.32+44:26:17.4'```.
-  - search_radius: the search radius (in seconds), should be an integer value. ```search_radius=5``` is the recommended default.
+  - search_radius: the search radius (in arcseconds), should be an integer value. ```search_radius=5``` is the recommended default.
 ##### Example: 
 ```
 from ysospy.handy_scipts import queryCoordSimbad
