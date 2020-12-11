@@ -31,7 +31,6 @@ def lombScargle(id,x,y,min_period,max_period,out_type):
     import matplotlib.pyplot as plt
     from astropy.io import ascii
     import numpy as np 
-    #from scipy.signal import find_peaks
 
     #Action
     dates = np.array(x)
