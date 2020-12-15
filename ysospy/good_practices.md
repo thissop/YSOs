@@ -1,0 +1,1 @@
+- By default, np.std(arr) returns the population standard deviation of an array—to get the sample standard deviation (N-1), set the optional ```ddof``` equal to the integer 1. 
