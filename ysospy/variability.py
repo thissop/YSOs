@@ -88,6 +88,8 @@ def lombScargle(id,x,y,min_period,max_period,out_type):
         plt.clf()
         
 def sergisonDistribution(x,percentiles):
+    #Description: Returns variability amplitude metric and normalized magnitudes array as in Sergison et al. 2019 
+    
     #Import(s)
     import numpy as np
     
