@@ -60,17 +60,21 @@ def sortData(x,y):
     import numpy as np
     
     #Action
+    
     unsorted_dates = list(x)
-    unsorted_mags = list(y)
     
     sorted_dates = list(np.sort(unsorted_dates))
-    sorted_mags = []
-    for elem in sorted_dates:
-        newIndex = sorted_dates.index(elem)
-        oldIndex = unsorted_dates.index(elem)
-        sorted_mags.append(unsorted_mags[oldIndex])
-    
+    sorted_arrays = []
+    for item in y:
+        unsorted_list = list(item)
+        sorted_list = []
+        for elem in sorted_dates:
+            #newIndex = sorted_dates.index(elem)
+            oldIndex = unsorted_dates.index(elem)
+            sorted_list.append(unsorted_list[oldIndex])
+        sorted_array = np.array(sorted_list)
+        sorted_arrays.append(sorted_array)
+
     sorted_dates = np.array(sorted_dates)
-    sorted_mags = np.array(sorted_mags)
     
-    return sorted_dates, sorted_mags
+    return sorted_dates, sorted_arrays
